@@ -1,1 +1,7 @@
+CON CENTOS para instalar hacer:
+
+$ yum install python-setuptools
+$ easy_install supervisor
+
+
 https://www.digitalocean.com/community/tutorials/how-to-install-and-manage-supervisor-on-ubuntu-and-debian-vps
