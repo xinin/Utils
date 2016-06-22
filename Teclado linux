@@ -1,0 +1,9 @@
+
+Para cambiar distribucion de teclas: sudo setxkbmap -layout 'es,es' -model pc105 
+
+
+RETROILUMINADO:
+
+Para encender: xset led 3
+
+Para apagar: xset -led 3

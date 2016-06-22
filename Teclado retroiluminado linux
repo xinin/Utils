@@ -1,3 +1,0 @@
-Para encender: xset led 3
-
-Para apagar: xset -led 3
