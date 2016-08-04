@@ -3,12 +3,9 @@ https://www.digitalocean.com/community/tutorials/how-to-install-node-js-with-nvm
 
 Menos la ultima parte que te lo pone como sudo
 
-Luego añadir la version actual de node con alias default
+Luego:
 
-Finalmente, ejecutar en consola:
+$ nvm alias default 4.4.7
 
-vim ~/.bashrc 
-
-Añadir en el fichero:
-source ~/.nvm/nvm.sh
-nvm use default
+Añadir en el fichero "vim ~/.bashrc" :
+source ~/.nvm/nvm.sh nvm use default
