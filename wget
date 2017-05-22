@@ -1,0 +1,3 @@
+descargar web mas resources
+
+wget --recursive --no-clobber --page-requisites --html-extension --convert-links --domains domain.com --no-parent http://www.domain.com/folder1/folder2/
