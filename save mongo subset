@@ -1,0 +1,6 @@
+db.collection1.aggregate(
+          [
+            {$match: {"param": 1}},
+            {$out: collectionOut}
+          ]
+        )
