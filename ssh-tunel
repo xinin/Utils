@@ -1,0 +1,12 @@
+#!/bin/bash
+
+port=$1
+
+if [ $# -ne 1 ]
+then
+  port=8081
+fi
+
+ssh -f -L ${port}:10.10.71.212:80 diego.prieto@52.49.252.149 -N
+
+echo "Tunel corriendo en el puerto ${port}"
