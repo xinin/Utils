@@ -2,8 +2,8 @@ brew update
 brew install nvm
 mkdir ~/.nvm
 vim ~/.bash_profile
-          -> export NVM_DIR=~/.nvm
-          -> source $(brew --prefix nvm)/nvm.sh
+          export NVM_DIR=~/.nvm
+          source $(brew --prefix nvm)/nvm.sh
 source ~/.bash_profile
 nvm --version        
  
