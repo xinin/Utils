@@ -1,0 +1,33 @@
+#!/bin/bash
+
+filename='repositories'
+gitlab_token='<tu_token>'
+github_org='Cloud-Process-History'
+github_user='xinin'
+github_token='<tu_token>'
+
+while read line; do
+ 
+    # Reading each repository
+    echo "Repository. $line"
+
+    # Clone each repository. In execution, the path where the repositories to be migrated are located must be passed as a parameter
+    git clone --bare https://oauth2:$gitlab_token@servidor0008.cepsacorp.com/$line.git
+    cd ${line##*/}.git
+  
+    #Create Github repository
+    curl \
+        -u $github_user:$github_token \
+        -X POST \
+        -H "Accept: application/vnd.github.v3+json" \
+        https://api.github.com/orgs/$github_org/repos \
+        -d '{"name":"'${line##*/}'"}'
+
+    #Push repo to the new origin
+    git push --mirror https://$github_user:$github_token@github.com/$github_org/${line##*/}.git
+
+    #Remove temp local folder
+    cd .. 
+    rm -rf ${line##*/}.git
+
+done < $filename
