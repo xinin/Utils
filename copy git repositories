@@ -21,7 +21,7 @@ while read line; do
         -X POST \
         -H "Accept: application/vnd.github.v3+json" \
         https://api.github.com/orgs/$github_org/repos \
-        -d '{"name":"'${line##*/}'"}'
+        -d '{"name":"'${line##*/}'", "visibility":"private", "private": true}'
 
     #Push repo to the new origin
     git push --mirror https://$github_user:$github_token@github.com/$github_org/${line##*/}.git
